@@ -20,7 +20,7 @@ jobs:
             image: ghcr.io/epitech/coding-style-checker:latest
         steps:
             - name: Checkout
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
 
             - name: get coding-style errors
               id: check_coding_style
@@ -28,7 +28,8 @@ jobs:
                 check.sh $(pwd) $(pwd)
                 echo "lol"
                 while read error; do
-                  echo $error
+                array=(`echo $error | sed 's/:/\n/g'`)
+                echo "::error file=${array[1]#./},title=${array[3]#./} coding style errors detected: ${array[2]#./}::${array[4]#./}"
                 done < coding-style-reports.log
                 
         
