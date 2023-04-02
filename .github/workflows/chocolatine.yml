@@ -26,6 +26,7 @@ jobs:
               id: check_coding_style
               run: |
                 check.sh $(pwd) $(pwd)
+                echo "lol"
                 while read error; do
                   echo "%p"
                 done < coding-style-reports.log
