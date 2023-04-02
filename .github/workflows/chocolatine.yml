@@ -19,9 +19,18 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v2
 
-            - name: check coding style
+            - name: get coding-style errors
               id: check_coding_style
-              run:
-                check.sh $(pwd) $(pwd) && cat coding-style-reports.log
+              run: |
+                output=$(check.sh $(pwd) $(pwd) && cat coding-style-reports.log)
+                echo "::set-output name=style_errors::$output"
+            
+            - name: display-errors
+              if: ${{ steps.check_coding_style.outputs.style_errors != '' }}
+              run: |
+                echo "coding style errors:"
+                echo "${{ steps.check_coding_style.outputs.style_errors }}"
+            
+                
         
         
