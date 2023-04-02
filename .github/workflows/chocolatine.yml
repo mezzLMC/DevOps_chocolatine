@@ -28,6 +28,7 @@ jobs:
                 check.sh $(pwd) $(pwd)
                 echo "lol"
                 echo "::warning file=app.js,line=1,col=5,endColumn=7::Missing semicolon"
+                echo "::error file=tools.c,title=coding style errors detected::Missing semicolon"
                 while read ERROR; do
                   array=(`echo $ERROR | sed 's/:/\n/g'`)
                   echo "::error file=${array[1]#./},title=${array[3]#./} coding style errors detected: ${array[2]#./}::${array[4]#./}"
