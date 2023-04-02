@@ -25,8 +25,10 @@ jobs:
             - name: get coding-style errors
               id: check_coding_style
               run: |
-                ERROR=$(check.sh $(pwd) $(pwd))
-                echo "$ERROR"
+                check.sh $(pwd) $(pwd)
+                while read error; do
+                  echo "%p"
+                done < coding-style-reports.log
                 
         
         
