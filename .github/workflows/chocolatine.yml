@@ -27,8 +27,8 @@ jobs:
               run: |
                 check.sh $(pwd) $(pwd)
                 echo "lol"
-                while read error; do
-                array=(`echo $error | sed 's/:/\n/g'`)
+                while read ERROR; do
+                array=(`echo $ERROR | sed 's/:/\n/g'`)
                 echo "::error file=${array[1]#./},title=${array[3]#./} coding style errors detected: ${array[2]#./}::${array[4]#./}"
                 done < coding-style-reports.log
                 
