@@ -22,6 +22,6 @@ jobs:
             - name: check coding style
               id: check_coding_style
               run:
-                echo "pipi caca"
+                check.sh $(pwd) $(pwd) && cat coding-style-reports.log
         
         
