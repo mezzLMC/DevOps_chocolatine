@@ -23,8 +23,7 @@ jobs:
               id: check_coding_style
               run: |
                 check.sh $(pwd) $(pwd)
-                output=$(cat coding-style-reports.log)
-                echo "::set-output name=style_errors::$output"
+                echo "::set-output name=style_errors::$(cat coding-style-reports.log)"
             
             - name: display-errors
               if: ${{ steps.check_coding_style.outputs.style_errors != '' }}
