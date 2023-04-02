@@ -28,7 +28,7 @@ jobs:
                 check.sh $(pwd) $(pwd)
                 echo "lol"
                 while read error; do
-                  echo "%p"
+                  echo $error
                 done < coding-style-reports.log
                 
         
