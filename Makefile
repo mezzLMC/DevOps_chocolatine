@@ -25,6 +25,9 @@ fclean:
 	make -C lib/my fclean
 	rm -f $(NAME)
 
+run_test:
+	./push_swap 1 2 3 4 5 6 7 8 9 10
+
 re:
 	make fclean
 	make all
