@@ -32,8 +32,6 @@ jobs:
                   gravity=$(echo $ERROR | awk -F ':' '{print $3}')
                   error=$(echo $ERROR | awk -F ':' '{print $4}')
                   url=$(echo "https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-                  echo "::error file=$filename,line=$line,title=$gravity coding style error,url=$url::$error"
+                  echo "::error file=$filename,line=$line,title=$gravity coding style error,url=https://myproject.com/errors/$error::$error"
                 done < coding-style-reports.log
                 
-        
-        
