@@ -21,9 +21,9 @@ jobs:
 
             - name: get coding-style errors
               id: check_coding_style
-              run:
-                check.sh $(pwd) $(pwd);
-                echo "errors=$(cat coding-style-reports.log)" >> $GITHUB_ENV
+              run: |
+                check.sh $(pwd) $(pwd)
+                echo "::set-output name=style_errors::$(cat coding-style-reports.log)"
             
             - name: display-errors
               if: ${{ steps.check_coding_style.outputs.style_errors != '' }}
