@@ -26,6 +26,7 @@ fclean:
 	rm -f $(NAME)
 
 tests_run:
+	make all
 	./push_swap 1 2 3 4 5 6 7 8 9 10
 
 re:
