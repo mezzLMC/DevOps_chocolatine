@@ -6,7 +6,7 @@
 */
 
 #include <stdlib.h>
-#include <unistd.h> 
+#include <unistd.h>
 #include "include/my.h"
 #include "include/stacking.h"
 
@@ -65,7 +65,6 @@ void add_operation(char* const str, int len, double_stack_t* stacks)
         new_str = malloc(sizeof(char) * (string->mem_len));
         string->string = new_str;
         my_strncpy(string->string, temp, string->str_len);
-        free(temp);
     }
     if (string->str_len != 0)
         string->string[string->str_len++ + i] = ' ';

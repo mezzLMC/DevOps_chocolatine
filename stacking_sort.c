@@ -28,9 +28,7 @@ stack_t* my_insertion_sort(double_stack_t* stacks, stack_t* l_node)
 {
     stack_t *stack_a = l_node, *head = stack_a;
     int has_changed = 0;
-    if (l_node == NULL)
-        return NULL;
-    while (stack_a->next != NULL && !has_changed) {
+    while (l_node && stack_a->next != NULL && !has_changed) {
         if (stack_a->data > stack_a->next->data)
             has_changed = 1;
         stack_a = stack_a->next;
