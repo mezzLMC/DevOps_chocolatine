@@ -29,8 +29,8 @@ jobs:
                 while read ERROR; do
                   filename=$(echo $ERROR | cut -d ':' -f 1 | cut -d '/' -f 2)
                   line=$(echo $ERROR | cut -d ':' -f 2)
-                  error=$(echo $ERROR | awk -F ':' '{print $3}')
-                  gravity=$(echo $ERROR | awk -F ':' '{print $2}' | awk '{print $1}')
+                  gravity=$(echo $ERROR | awk -F ':' '{print $3}')
+                  error=$(echo $ERROR | awk -F ':' '{print $2}' | awk '{print $1}')
                   echo "Filename: $filename"
                   echo "Line: $line"
                   echo "Error: $error"
