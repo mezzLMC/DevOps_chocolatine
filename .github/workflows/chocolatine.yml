@@ -21,7 +21,7 @@ jobs:
 
             - name: get coding-style errors
               id: check_coding_style
-              run: |
+              run:
                 check.sh $(pwd) $(pwd)
                 echo "errors=$(cat coding-style-reports.log)" >> $GITHUB_ENV
             
