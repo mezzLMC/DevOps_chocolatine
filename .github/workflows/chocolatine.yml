@@ -31,7 +31,7 @@ jobs:
                   line=$(echo $ERROR | cut -d ':' -f 2)
                   error=$(echo $ERROR | awk -F '[-:]' '{print $3}')
                   gravity=$(echo $ERROR | awk -F '[:-]' '{print $3}')
-                  echo "::error file=$filename, line=$line, title=$gravity coding style error at line |$line| ::mon paf"
+                  echo "::error file=$filename, line=$line, title=$gravity coding style error at line::mon paf"
                 done < coding-style-reports.log
                 
         
