@@ -33,7 +33,7 @@ jobs:
                   error=$(echo $ERROR | awk -F ':' '{print $4}')
                   echo "::error file=$filename,line=$line,title=$gravity coding style error::$error"
                 done < coding-style-reports.log
-                if (cat coding-style-reports.log | wc -l) -gt 0
+                if [ -s coding-style-reports.log ]
                 then
                   exit 1
                 fi
